@@ -17,10 +17,6 @@ node_modules/
 .idea/
 *.swp
 
-# Ignore compiled files (if you generate any)
-*.min.css
-*.min.js
-
 # Ignore personal environment files
 .env
 config.php
