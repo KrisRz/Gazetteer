@@ -1,0 +1,19 @@
+# Enable mod_rewrite
+RewriteEngine On
+RewriteBase /
+
+# Ensure PHP files are processed
+AddHandler application/x-httpd-php .php
+
+# Redirect all requests to index.php (if needed)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+# Set default directory index
+DirectoryIndex index.php index.html
+
+# Fix missing file issues (404 errors)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
