@@ -1,0 +1,11 @@
+# Ignore system files
+.DS_Store
+
+# Ignore logs and cache
+*.log
+sessions/
+cache/
+
+# Ignore Git-related files
+.git
+.gitignore
