@@ -1,0 +1,26 @@
+# macOS system files
+.DS_Store
+
+# Logs and debug files
+debug.log
+*.log
+
+# PHP session files and cache
+sessions/
+cache/
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+
+# Ignore compiled files (if you generate any)
+*.min.css
+*.min.js
+
+# Ignore personal environment files
+.env
+config.php

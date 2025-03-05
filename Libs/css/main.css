@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#map {
+    height: 100vh; /* Fullscreen height */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ====== LOADING SCREEN ====== */
+#loadingDiv {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1100;
+    display: none;
+}
+
+/* ====== COUNTRY DROPDOWN ====== */
+#countrySelectContainer {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 1001;
+}
+
+/* ====== MOBILE (0px+) ====== */
+.country-select-control {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Leaflet control buttons */
+.leaflet-top.leaflet-left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    z-index: 1000;
+}
+
+/* ====== TABLET (768px+) ====== */
+@media screen and (min-width: 768px) {
+    #countrySelectContainer {
+        top: 15px;
+        padding: 10px;
+    }
+
+    .country-select-control {
+        top: 120px;
+        padding: 10px;
+    }
+
+    .leaflet-top.leaflet-left {
+        left: 15px;
+    }
+}
+
+/* ====== DESKTOP (1024px+) ====== */
+@media screen and (min-width: 1024px) {
+    #countrySelectContainer {
+        top: 20px;
+        padding: 12px;
+    }
+
+    .country-select-control {
+        top: 140px;
+        padding: 12px;
+    }
+
+    .leaflet-top.leaflet-left {
+        left: 20px;
+    }
+}
