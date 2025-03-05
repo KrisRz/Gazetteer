@@ -60,7 +60,7 @@ L.easyButton('<i class="fa fa-cloud-sun"></i>', function(btn, map) {
 
     // Get the capital city of the selected country
     $.ajax({
-        url: 'libs/php/getCountryInfo.php',
+        url: '/libs/php/getCountryInfo.php',
         type: 'POST',
         dataType: 'json',
         data: { country: selectedCountryCode },
@@ -158,7 +158,7 @@ map.on('locationerror', function() {
 
 // Country Borders Function
 function loadCountryBorders(countryCode) {
-    fetch("libs/js/countryBorders.geo.json")
+    fetch("/libs/js/countryBorders.geo.json")
         .then(response => response.json())
         .then(data => {
             var selectedCountry = data.features.find(feature => 
@@ -196,7 +196,7 @@ function getOverlays() {
     overlays["Fuel Stations"].clearLayers();
 
     $.ajax({
-        url: 'libs/php/getBoundingBox.php',
+        url: '/libs/php/getBoundingBox.php',
         type: 'POST',
         dataType: 'json',
         data: { country: selectedCountryCode },
@@ -234,7 +234,7 @@ function getOverlays() {
 // 🌍 Fetch Earthquake Markers
 function fetchEarthquakes(north, south, east, west) {
     $.ajax({
-        url: 'libs/php/getEarthquakes.php',
+        url: '/libs/php/getEarthquakes.php',
         type: 'POST',
         dataType: 'json',
         data: { north, south, east, west },
@@ -265,7 +265,7 @@ function fetchEarthquakes(north, south, east, west) {
 // 🏙️ Fetch City Markers
 function fetchCities(north, south, east, west) {
     $.ajax({
-        url: 'libs/php/getCities.php',
+        url: '/libs/php/getCities.php',
         type: 'POST',
         dataType: 'json',
         data: { north, south, east, west },
@@ -296,7 +296,7 @@ function fetchCities(north, south, east, west) {
 // 🏨 Fetch Hotel Markers
 function fetchHotels(north, south, east, west) {
     $.ajax({
-        url: 'libs/php/getHotels.php',
+        url: '/libs/php/getHotels.php',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -341,7 +341,7 @@ function fetchHotels(north, south, east, west) {
 // ⛽ Fetch Fuel Stations
 function fetchFuelStations(north, south, east, west) {
     $.ajax({
-        url: 'libs/php/getFuel.php',
+        url: '/libs/php/getFuel.php',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -406,7 +406,7 @@ function getCountryInfo() {
     }
 
     $.ajax({
-        url: 'libs/php/getCountryInfo.php',
+        url: '/libs/php/getCountryInfo.php',
         type: 'POST',
         dataType: 'json',
         data: { country: selectedCountry },
@@ -440,7 +440,7 @@ function getWeather(city, country) {
     console.log("Fetching weather for:", city, country);
 
     $.ajax({
-        url: 'libs/php/getWeather.php',
+        url: '/libs/php/getWeather.php',
         type: 'POST',
         dataType: 'json',
         data: { citysearch: city, countrycode: country },
@@ -488,7 +488,7 @@ function getWikiInfo() {
     console.log("🔍 Search Query:", searchName);
 
     $.ajax({
-        url: 'libs/php/getWikiEntries.php',
+        url: '/libs/php/getWikiEntries.php',
         type: 'POST',
         dataType: 'json',
         data: { country: searchName },
@@ -605,7 +605,7 @@ function getLocation() {
 
                 // Fetch country code using reverse geocoding
                 $.ajax({
-                    url: 'libs/php/getCountryCodeA2.php',
+                    url: '/libs/php/getCountryCodeA2.php',
                     type: 'POST',
                     dataType: 'json',
                     data: {
@@ -714,7 +714,7 @@ function populateCountryDropdown() {
     loading.show(); // Show loading before AJAX call
 
     $.ajax({
-        url: 'libs/php/getSelectList.php',
+        url: '/libs/php/getSelectList.php',
         type: 'GET',
         dataType: 'json',
         success: function(result) {
