@@ -550,7 +550,7 @@ function getLocalTime() {
     console.log("Fetching local time for:", lat, lng);
 
     $.ajax({
-        url: 'libs/php/getLocalTime.php',
+        url: '/libs/php/getLocalTime.php',
         type: 'POST',
         dataType: 'json',
         data: { lat: lat, lng: lng },
