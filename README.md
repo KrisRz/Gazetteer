@@ -1,3 +1,5 @@
+This project is for demonstration purposes only. For code access or questions, please contact me.
+
 # Gazetteer 🌍
 
 Gazetteer is an interactive web application that provides real-time country information, weather updates, Wikipedia entries, and local time based on user selection.
